@@ -25,4 +25,20 @@ const fibs = function(num){
 };
 
 console.log(fibs(8));
-console.log(fibs(12));
+
+const fibsRec = function(num){
+    console.log("This was printed recursively");
+    if (num > 2){
+    let previousArr = fibsRec(num-1);
+    previousArr.push(previousArr[previousArr.length-1]+previousArr[previousArr.length-2]);
+    return previousArr;
+    } else if (num == 2){
+        return [0,1];
+    } else if (num == 1){
+        return [0];
+    } else if (num <= 0){
+        return [];
+}}
+
+console.log(fibsRec(8));
+console.log(fibsRec(1));
